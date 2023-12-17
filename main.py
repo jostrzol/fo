@@ -77,9 +77,9 @@ def update(value=0, initial=False):
 
 update(0, True)
 
-ax.set_xlabel("X")
-ax.set_ylabel("Y")
-ax.set_zlabel("Temperatura")
+ax.set_xlabel("X [m]")
+ax.set_ylabel("Y [m]")
+ax.set_zlabel("Temperatura [K]")
 ax.set_box_aspect(aspect=None, zoom=1)
 ax.set_zlim(0, 1)
 surf = ax.plot_surface(X, Y, u, cmap="viridis", rstride=5, cstride=5, alpha=0.7)
@@ -99,7 +99,7 @@ step_slider.set_active(False)
 step_slider.on_changed(update)
 
 ## Alpha slider
-axalpha = fig.add_axes([0.15, 0.25, 0.0225, 0.63])
+axalpha = fig.add_axes([0.18, 0.25, 0.0225, 0.63])
 alpha_slider = Slider(
     ax=axalpha,
     label="Alpha",
@@ -116,10 +116,10 @@ def update_alpha(val):
 alpha_slider.on_changed(update_alpha)
 
 ## Moc źródła slider
-axsource = fig.add_axes([0.05, 0.25, 0.0225, 0.63])
+axsource = fig.add_axes([0.08, 0.25, 0.0225, 0.63])
 source_slider = Slider(
     ax=axsource,
-    label="Source Power",
+    label="Source Power [W]",
     valmin=0,
     valmax=20,
     valinit=10,
